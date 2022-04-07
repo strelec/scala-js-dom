@@ -22,6 +22,9 @@ abstract class Element extends Node with NodeSelector with ParentNode with NonDo
 
   /** Removes the element from the tree it belongs to. */
   def remove(): Unit = js.native
+ 
+   /** Replaces a child node within the given (parent) node. */
+  def replaceWith(nodes: (Node | String)*): Unit = js.native
 
   /** Inserts a set of Node or DOMString objects in the children list of this Element's parent, just before this
     * Element. DOMString objects are inserted as equivalent Text nodes.
